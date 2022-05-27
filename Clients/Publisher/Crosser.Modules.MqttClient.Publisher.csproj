@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <TargetFramework>netstandard2.1</TargetFramework>
+
+    <!-- <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute> -->
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Crosser.EdgeNode.Flows" Version="2.5.0" />
+    <PackageReference Include="MQTTnet" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Common\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="docs\**\*">
+      <Pack>true</Pack>
+      <PackagePath>docs\</PackagePath>
+    </Content>
+  </ItemGroup>
+</Project>
