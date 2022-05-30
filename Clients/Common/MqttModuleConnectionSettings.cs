@@ -22,7 +22,7 @@ namespace Crosser.Modules.MqttClient.Common
         [JsonSchemaExtensionData("x-sortOrder", 11)]
         [Display(Name = "Port", Description = "Normally 1883/8883 depending of security")]
         [DefaultValue(1883)]
-        [Range(1, 99999)]
+        [Range(1, ushort.MaxValue)]
         public int Port { get; set; }
 
         [JsonSchemaExtensionData("x-sortOrder", 12)]
@@ -69,7 +69,7 @@ namespace Crosser.Modules.MqttClient.Common
         public override void Validate(SettingsValidator validator)
         {
             validator.Validate(nameof(this.Url), this.Url).NotNull().MinLength(1).MaxLength(256);
-            validator.Validate(nameof(this.Port), this.Port).MinValue(1).MaxValue(99999);
+            validator.Validate(nameof(this.Port), this.Port).MinValue(1).MaxValue(ushort.MaxValue);
             validator.Validate(nameof(this.ClientId), this.ClientId).NotNull().MinLength(0).MaxLength(256);
 
             if (this.LastWillTestament.UseLastWillTestament)
